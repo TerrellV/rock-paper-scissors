@@ -1,50 +1,82 @@
 //to account for two scenarios or if ____ is this and ____ is that we use a nested if statement
 
-var userChoice = prompt("Do you choose rock, paper or scissors?");
-
-var computerChoice = Math.random();
-if (computerChoice < 0.34) {
-    computerChoice = "rock";
-} else if (computerChoice <= 0.67) {
-    computerChoice = "paper";
-} else {
-    computerChoice = "scissors";
-}
+// var userChoice = prompt("Do you choose rock, paper or scissors?");
 
 
-var compare = function (choice1, choice2) {
+$(document).ready(function () {
+    
+    //Setting computer choicefunction
+    
+    var compChoice = function() {
+        var computerChoice = Math.random();
+        
+        if (computerChoice < 0.34) {
+            return "rock";
+        } else if (computerChoice <= 0.67) {
+            return "paper";
+        } else {
+            return "scissors";
+        }
+    };
+    
+    //END compChoice function
+    
+    //click action to set value of user and excecute code
+    $("#cRock").click(function() {
+        var userChoice = "rock";
+        console.log(userChoice);
+        runGame(userChoice, compChoice());
+    });
+    
+    $("#cPaper").click(function() {
+        var userChoice = "paper";
+        console.log(userChoice);
+        runGame(userChoice, compChoice());
+    });
+    
+    $("#cScissors").click(function() {
+        var userChoice = "scissors";
+        runGame(userChoice, compChoice());
+    });
+
+//code to give results...
+var runGame = function (choice1, choice2) { //gamefunction
 
     if (choice1 === choice2) {
-        return "The result is a tie";
-    }
+        alert ("The result is a tie");
+        // this is where I want to insert html
+    };
    
     if (choice1 === "rock") {
         if (choice2 === "scissors") {
-            return "rock wins";
+            alert("rock wins");
         } else {
-            return "paper wins";
+            alert("paper wins");
         }
-    }
+    };
     
     if (choice1 === "paper") {
         if (choice2 === "rock") {
-            return "paper wins";
+            alert("paper wins");
         } else {
-            return "scissors wins";
+            alert("scissors wins");
         }
-    }
+    };
     
     if (choice1 === "scissors") {
         if (choice2 === "paper") {
-            return "scissors wins";
+            alert("scissors wins");
         } else {
-            return "rock wins";
+            alert("rock wins");
         }
     }
 };
 
 
-compare(userChoice, computerChoice);
+});
+
+
+
 
 /* 
  

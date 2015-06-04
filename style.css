@@ -4,6 +4,7 @@
 }
  /* resseting the page */
 
+/* Begin Header */
 #header h1 {
     width: 60%;
     font-family: "orange juice";
@@ -26,8 +27,9 @@
     bottom: -3em
 }
 
+/* End Header */
 
-
+/* Begin Buttons */
 .choices {
     background-color: rgba(173, 216, 230, 0);
     width: 48%;
