@@ -4,7 +4,7 @@
 
 
 $(document).ready(function () {
-    
+    $("#rockIcon").hide();
     //Setting computer choicefunction
     
     var compChoice = function() {
@@ -25,9 +25,9 @@ $(document).ready(function () {
     $("#cRock").click(function() {
         $(".choices").hide();
         var userChoice = "rock";
-        $('#populate').append(compChoice());
-        alert(compChoice());
-        //runGame(userChoice, compChoice());
+        var setChoice = compChoice();
+        $('#rockIcon').show();
+        runGame(userChoice, setChoice);
         
     });
     
