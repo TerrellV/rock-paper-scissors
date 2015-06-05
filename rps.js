@@ -23,22 +23,31 @@ $(document).ready(function () {
     
     //click action to set value of user and excecute code
     $("#cRock").click(function() {
+        $(".choices").hide();
         var userChoice = "rock";
-        console.log(userChoice);
-        runGame(userChoice, compChoice());
+        $('#populate').append(compChoice());
+        alert(compChoice());
+        //runGame(userChoice, compChoice());
+        
     });
     
     $("#cPaper").click(function() {
+        $(".choices").hide();
         var userChoice = "paper";
         console.log(userChoice);
         runGame(userChoice, compChoice());
     });
     
     $("#cScissors").click(function() {
+        $(".choices").hide();
         var userChoice = "scissors";
         runGame(userChoice, compChoice());
     });
 
+    
+    
+    //reset button
+    
 //code to give results...
 var runGame = function (choice1, choice2) { //gamefunction
 
