@@ -26,7 +26,6 @@ $(document).ready(function () {
         $(".choices").hide();
         var userChoice = "rock";
         var setChoice = compChoice();
-        $('#rockIcon').show();
         runGame(userChoice, setChoice);
         
     });
@@ -34,14 +33,15 @@ $(document).ready(function () {
     $("#cPaper").click(function() {
         $(".choices").hide();
         var userChoice = "paper";
-        console.log(userChoice);
-        runGame(userChoice, compChoice());
+        var setChoice = compChoice();
+        runGame(userChoice, setChoice);
     });
     
     $("#cScissors").click(function() {
         $(".choices").hide();
         var userChoice = "scissors";
-        runGame(userChoice, compChoice());
+        var setChoice = compChoice();
+        runGame(userChoice, setChoice);
     });
 
     
