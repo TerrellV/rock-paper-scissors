@@ -51,7 +51,7 @@
     font-size: 160%;
     font-family: sans-serif;
     font-weight: bold;
-    color: #b25858;
+    color: #587FB2;
     background-color: white;
     padding: .5em 1.5em;
     border-radius: 4px;
@@ -65,12 +65,13 @@
     top: 300px;
 }
 #reset {
-    background-color: #585656;
+    background-color: #5AE27B;
     font-size: 40px;
     padding: 10px 30px;
     color: white;
     border: 0 solid;
     font-family: sans-serif;
     font-weight: bold;
-    margin-right: 39px
+    margin-right: 39px;
+    border-radius: 5px;
 }
