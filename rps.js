@@ -50,19 +50,21 @@ $(document).ready(function () {
 var runGame = function(choice1, choice2) {
 
     if (choice1 === choice2) {
-        alert("The result is a tie");
+        alert("You chose: " + choice1 + " Comp: " + choice2);
+        return alert("The result is a tie");
     };
+    
     if (choice1 === "rock") {
         if (choice2 === "scissors") {
             alert("rock wins");
         } else {
-            alert("paper wins");
+            alert("paper wins 1");
         }
     };
     
     if (choice1 === "paper") {
         if (choice2 === "rock") {
-            alert("paper wins");
+            alert("paper wins 2");
         } else {
             alert("scissors wins");
         }
