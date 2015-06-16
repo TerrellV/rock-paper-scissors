@@ -5,6 +5,7 @@
 
 $(document).ready(function () {
     $("#rockIcon").hide();
+    //$("#tie").hide();
     //Setting computer choicefunction
     
     var compChoice = function() {
@@ -47,34 +48,35 @@ $(document).ready(function () {
     //reset button
     
 //code to give results...
-var runGame = function(choice1, choice2) {
+var runGame = function(user, comp) {
 
-    if (choice1 === choice2) {
-        alert("You chose: " + choice1 + " Comp: " + choice2);
+    if (user === comp) {
         return alert("The result is a tie");
     };
     
-    if (choice1 === "rock") {
-        if (choice2 === "scissors") {
-            alert("rock wins");
+    if (user === "rock") {
+        if (comp === "scissors") {
+            alert("user wins");
+            var UserOption = document.getElementById('cRock');
+            return alert(displayWin);
         } else {
-            alert("paper wins 1");
+            alert("comp wins");
         }
     };
     
-    if (choice1 === "paper") {
-        if (choice2 === "rock") {
-            alert("paper wins 2");
+    if (user === "paper") {
+        if (comp === "rock") {
+            alert("user wins");
         } else {
-            alert("scissors wins");
+            alert("comp wins");
         }
     };
     
-    if (choice1 === "scissors") {
-        if (choice2 === "paper") {
-            alert("scissors wins");
+    if (user === "scissors") {
+        if (comp === "paper") {
+            alert("user wins");
         } else {
-            alert("rock wins");
+            alert("comp wins");
         }
     }
 };
