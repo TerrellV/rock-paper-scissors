@@ -7,22 +7,27 @@
 </head>
     <body>
         
-        <div id="header">
+        <div class="box" id="box1">
             <h1>ROCK PAPER SCISSORS</h1>
             <h2 id="Answer"></h2>
         </div>
         
         
-        <div class="choices">
-            <ul>
-                <li id="cRock" class="buttons">ROCK</li>
-                <li id="cPaper" class="buttons">PAPER</li>
-                <li id="cScissors" class="buttons">SCISSORS</li>
-            </ul>
+        <div class="box" id="boxtwo">
+            <div id='results'>
+                <!--inserting html from javascript here-->
+            </div>
+            <div class="container" id="container">
+                <button class="buttons" id="cRock">ROCK</button>
+                <button class="buttons" id="cPaper">PAPER</button>
+                <button class="buttons" id="cScissors">SCISSORS</button>
+            </div>
         </div>
         
-        <div class="endButtons">
-            <button id="reset">RESTART</button>
+        <div class="box" id="box3">
+            <div class="endButtons">
+                <button id="reset">RESTART</button>
+            </div>
         </div>
         
     <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
@@ -30,3 +35,33 @@
     </body>
 </html>
 
+
+
+<!--
+
+
+                "<div id ='b1_2'>" +
+                    "<div id='b1_3'>" +
+                        "<h2 class ='h1s' id='userdis'>USER</h2>" +
+                        "<h2 class ='h1s' id='compdis'>COMP</h2>" +
+                    "</div>" +
+                "</div>" +
+
+                "<div id ='display'>" +
+                    "<div class='ditem'>" + userIMAGE +
+                    "</div>" +
+                    "<div class='ditem'>" +
+                        "<span id='vs'>VS</span>" +
+                    "</div>" +
+                    "<div class='ditem'>" + compIMAGE +
+                    "</div>" +
+                "</div>";
+
+
+insert icons
+adjust h1 text that displayes choices
+make all buttons the same length
+adjust sizing for work on smaller screens
+insert a display winner function...
+show user option then delay the computer display by 1 sec...
+-->
