@@ -27,9 +27,7 @@ $(document).ready(function () {
         var userChoice = "rock";
         var setChoice = compChoice();
         runGame(userChoice, setChoice);
-        
     });
-    
     $("#cPaper").click(function() {
         $(".choices").hide();
         var userChoice = "paper";
@@ -49,13 +47,11 @@ $(document).ready(function () {
     //reset button
     
 //code to give results...
-var runGame = function (choice1, choice2) { //gamefunction
+var runGame = function(choice1, choice2) {
 
     if (choice1 === choice2) {
-        alert ("The result is a tie");
-        // this is where I want to insert html
+        alert("The result is a tie");
     };
-   
     if (choice1 === "rock") {
         if (choice2 === "scissors") {
             alert("rock wins");
