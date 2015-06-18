@@ -45,7 +45,8 @@ $(document).ready(function(){
     
     
     /* Reset Button Click Event*/
-    $("#reset").click(function() {
+    
+    $("#resetBox").click(function() {
         var empty = document.getElementById("results");
         empty.innerHTML = "";
         $(".buttons").show();
@@ -111,10 +112,12 @@ $(document).ready(function(){
             var compImage = scissorsIcon;    
         };
         
-        var inserthtml = "<div id ='b1_2'>" +
+        var inserthtml = 
+            
+                "<div id ='b1_2'>" +
                     "<div id='b1_3'>" +
-                        "<h2 class ='h1s' id='userdis'>USER</h2>" +
-                        "<h2 class ='h1s' id='compdis'>COMP</h2>" +
+                        "<h2 class ='h1s col-lg-6 col-md-6 col-sm-6 col-sm-6' id='userdis'>USER</h2>" +
+                        "<h2 class ='h1s col-lg-6 col-md-6 col-sm-6 col-sm-6' id='compdis'>COMP</h2>" +
                     "</div>" +
                 "</div>" +
 
