@@ -2,9 +2,9 @@ $(document).ready(function(){
     alert("Working");
     
     //seting variables for result images
-    var rockIcon = "<img src='images/Rock-Icon.png' class='icons'/>";
-    var paperIcon = "<img src='images/Paper-Icon.png' class='icons'/>";
-    var scissorsIcon = "<img src='images/Scissors-Icon.png' class='icons'/>";
+    var rockIcon = "<img src='../images/Rock-Icon.png' class='icons'/>";
+    var paperIcon = "<img src='../images/Paper-Icon.png' class='icons'/>";
+    var scissorsIcon = "<img src='../images/Scissors-Icon.png' class='icons'/>";
     
     //set global variables to track user and computer choices
     var userChoice = "";
