@@ -8,6 +8,7 @@
 #body {
     background-color: #ECECEC;
 }
+
 #header {
     background-color: #4285F4;
     height: 129px;
@@ -16,6 +17,7 @@
 -moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 }
+
 #headerText h1{
     text-align: center;
     font-size: 6vh;
@@ -73,7 +75,7 @@ box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 }
 
 #vs {
-    color: #80807e;
+    font-size: 30px;
 }
 #displayImages {
     width: 100%;
@@ -166,4 +168,15 @@ box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 
 #resetIcon {
     padding: 33px;
+}
+/*seting animations*/
+
+#vs {
+    -webkit-animation-delay: .3s;
+}
+#resultsText {
+    -webkit-animation-delay: 1.5s;
+}
+#compImage {
+    -webkit-animation-delay: 1s;
 }
