@@ -6,22 +6,28 @@
 
 /*background*/
 #body {
-    background-color: #FAFAFA;
+    background-color: #ECECEC;
 }
 #header {
-    background-color: #2196F3;
-    height: 20vh;
+    background-color: #4285F4;
+    height: 129px;
     color: white;
+    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+-moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 }
 #headerText h1{
     text-align: center;
-    font-size: 15vh;
+    font-size: 6vh;
     font-weight: bold;
+    font-family:"tahoma";
+    position:relative;
+    top: 1vh;
 }
 /*Begin App*/
 
 #app {
-    background-color: #F5F5F5;
+    background-color: #F2F2F2;
     width: 40em;
     position: relative;
     top: 50px;
@@ -32,17 +38,20 @@ box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
 
 #appHeader {
     height: 10em;
-    background-color: #42A5F5;
+    background-color: #4285F4;
     margin: 0 -15px;
+    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+-moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 }
 
 #appHeaderText h2{
     text-align: center;
     color: white;
-    font-size: 33px;
-    font-weight: bold;
+    font-size: 30px;
     position: relative;
     top: 3vh;
+    font-family: "tahoma";
 }
 
 #options {
@@ -53,32 +62,27 @@ box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
 
 /*Begin results Display*/
 
-
-#b1_2 .h1s{
-}
-
-#b1_3 {
-}
-
-.h1s {
+.resultHeader {
     font-family: sans-serif;
     font-size: 40px;
-    margin: 10px auto;
-    margin-bottom: 40px;
+    margin: 53px auto;
+    margin-bottom: 50px;
     text-align: center;
     font-weight: bold;
     color: #2196F3
 }
 
-
-#display {
+#vs {
+    color: #80807e;
+}
+#displayImages {
     width: 100%;
     margin: auto;
     display: inline-block;
     text-align: center;
 }
 
-.ditem {
+.displayitem {
     display: inline;
     font-size: 40px;
     font-family: sans-serif;
@@ -104,10 +108,8 @@ box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
 .buttons {
     margin: 20px 0;
     font-size: 20px;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: white;
-    background-color: #2196F3;
+    font-family: "tahoma", sans-serif;
+    color: #F2F2F2;
     padding: .5em 1.5em;
     border-radius: 4px;
     width: 200px;
@@ -119,33 +121,49 @@ box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
 box-shadow: 1px 1px 10px 0px rgba(148, 142, 148, 0.64);
 }
 
+#cRock{
+    background-color: #8D6E63;
+}
+
+#cPaper{
+    background-color: #66BB6A;
+}
+
+#cScissors{
+    background-color: #FFA726;
+}
+
+
+
 .icons {
-    height: 20vh;
-    width: 20vh;
+    height: 18vh;
+    width: 18vh;
 }
 
 /*restart Button*/
 
 #resetBox {
-    margin: 0 -15px;
-    background-color: #FF5722;
-    height: 60px;
+    width: 100%;
 }
-#reset-container {
-    width: 200px;
+
+#centerDIV {
     margin: 0 auto;
-    position: relative;
-    top: 5px;
-}
-#reset {
-    margin: 0 auto;
-    width:  200px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0);
-    font-size: 20px;
-    padding: .5em 1.5em;
-    color: white;
-    border: 0 solid;
-    font-family: sans-serif;
-    font-weight: bold;
+}
+
+#resetButton {  
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 0px solid;
+    background-color: #DB4437;
+    position: relative;
+    top: 50px;
+    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+-moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+}
+
+
+#resetIcon {
+    padding: 33px;
 }

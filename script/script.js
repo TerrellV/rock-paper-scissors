@@ -46,10 +46,17 @@ $(document).ready(function(){
     
     /* Reset Button Click Event*/
     
-    $("#resetBox").click(function() {
+    $("#resetButton").click(function() {
+        $(this).addClass("animated rotateIn");
         var empty = document.getElementById("results");
         empty.innerHTML = "";
         $(".buttons").show();
+        $(".buttons").addClass("animated fadeIn");
+    });
+    
+    $(".buttons").click(function() {
+        $("#resetButton").removeClass("animated rotateIn");
+        $(".buttons").removeClass("animated fadeIn");
     })
     
     
@@ -116,18 +123,18 @@ $(document).ready(function(){
             
                 "<div id ='b1_2'>" +
                     "<div id='b1_3'>" +
-                        "<h2 class ='h1s col-lg-6 col-md-6 col-sm-6 col-sm-6' id='userdis'>USER</h2>" +
-                        "<h2 class ='h1s col-lg-6 col-md-6 col-sm-6 col-sm-6' id='compdis'>COMP</h2>" +
+                        "<h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6 col-sm-6' id='userdis'>USER</h2>" +
+                        "<h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6 col-sm-6' id='compdis'>COMP</h2>" +
                     "</div>" +
                 "</div>" +
 
-                "<div id ='display'>" +
-                    "<div class='ditem'>" + userImage +
+                "<div id ='displayImages'>" +
+                    "<div class='displayitem'>" + userImage +
                     "</div>" +
-                    "<div class='ditem'>" +
+                    "<div class='displayitem'>" +
                         "<span id='vs'>VS</span>" +
                     "</div>" +
-                    "<div class='ditem'>" + compImage +
+                    "<div class='displayitem'>" + compImage +
                     "</div>" +
                 "</div>";
         
