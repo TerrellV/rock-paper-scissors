@@ -9,7 +9,7 @@ $(document).ready(function(){
     //set global variables to track user and computer choices
     var userImage = "....";
     var compImage = "....";
-    run = "Taday"
+    run = "."
     // defining computers response
     
     var compChoice = function() {
@@ -25,25 +25,66 @@ $(document).ready(function(){
     };
     
     
+    /*setting function and user object to log stats*/
     
+    var logStats = function(result) {
+        if(result === "win") {
+            UserStats.wins += 1;
+            console.log(UserStats.wins);
+             UserStats.gamesPlayed += 1;
+        } else if (result === "lose") {
+            UserStats.lossses += 1;
+             UserStats.gamesPlayed += 1;
+        } else {
+            UserStats.gamesPlayed += 1;
+            UserStats.ties +=1;
+        }
+    };
+    
+    var UserStats = {
+        wins: 0,
+        lossses: 0,
+        ties: 0,
+        gamesPlayed: 0
+    };
+    
+    /*seting images on tie function*/
+    var tieImageSet = function(user, comp) {
+        if(user === "rock") {
+        userImage = rockIcon;
+    } else if(user === "paper") {
+        userImage = paperIcon;
+    } else {
+        userImage = scissorsIcon;
+    }
+    
+    if(comp === "rock") {
+        compImage = rockIcon;
+    } else if(comp === "paper") {
+        compImage = paperIcon;
+    } else {
+        compImage = scissorsIcon;
+    }};
     
     
     // define and set new value for outcome 
     
     var runGame = function(user, comp) {
         if (user === comp) {
-            compImage = "dont know yet";
-            userImage = "lalala";
-            return "tie";
+            tieImageSet(user, comp);
+            logStats("tie"); // havent added a tracker for ties yet
+            return "Tie Game";
         };
         if (user === "rock") {
             if (comp === "scissors") {
                 compImage = scissorsIcon;
                 userImage = rockIcon;
+                logStats("win");
                 return "You Won";
             } else {
                 userImage = rockIcon;
                 compImage = paperIcon;
+                logStats("lose");
                 return "You Lost";
             }
         };
@@ -51,10 +92,12 @@ $(document).ready(function(){
             if (comp === "rock") {
                 userImage = paperIcon;
                 compImage =  rockIcon;
+                logStats("win");
                 return "You Won";
             } else {
                 userImage = paperIcon;
                 compImage = scissorsIcon;
+                logStats("lose");
                 return "You Lost";
             }
         };
@@ -62,13 +105,31 @@ $(document).ready(function(){
             if (comp === "paper") {
                 userImage = scissorsIcon;
                 compImage = paperIcon;
+                logStats("win");
                 return "You Won";
             } else {
                 userImage = scissorsIcon;
                 compImage = rockIcon;
+                logStats("lost");
                 return "You Lost";}
         }
     };
+    
+    
+    // TEST TEST TEST TEST DELETE AFTER TEST
+    
+    $('#mainText').click(function() {
+        alert("Wins: " + UserStats.wins  + " Loses: " + UserStats.lossses + " Ties: " +UserStats.ties + " Games Played: " + UserStats.gamesPlayed );
+    })
+    
+    $("#mainText").mousedown(function() {
+        $(this).addClass("headerClickDown");
+    })
+    $("#mainText").mouseup(function() {
+        $(this).removeClass("headerClickDown");
+    })
+    // TEST TEST TEST TEST DELETE AFTER TEST
+    
     
     // run the functions above
     
@@ -123,7 +184,7 @@ $(document).ready(function(){
         $(".buttons").removeClass("animated fadeIn");
         $("#compImage").addClass("animated bounceInDown");
         $('#vs').addClass("animated zoomIn");
-        $("#resultsText").addClass("animated zoomInDown")
+        $("#resultsText").addClass("animated fadeIn")
     })
     
     /* Reset Button Click Event*/
