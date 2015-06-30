@@ -1,20 +1,20 @@
 $(document).ready(function(){
     alert("Working");
-    
+
     //seting variables for result images
     var rockIcon = "<img src='../images/Rock-Icon.png' class='icons'/>";
     var paperIcon = "<img src='../images/Paper-Icon.png' class='icons'/>";
     var scissorsIcon = "<img src='../images/Scissors-Icon.png' class='icons'/>";
-    
+
     //set global variables to track user and computer choices
     var userImage = "....";
     var compImage = "....";
     run = "."
     // defining computers response
-    
+
     var compChoice = function() {
         var computerChoice = Math.random();
-        
+
         if (computerChoice < 0.34) {
             return "rock";
         } else if (computerChoice <= 0.67) {
@@ -23,31 +23,30 @@ $(document).ready(function(){
             return "scissors";
         }
     };
-    
-    
+
+
     /*setting function and user object to log stats*/
-    
+
     var logStats = function(result) {
         if(result === "win") {
             UserStats.wins += 1;
-            console.log(UserStats.wins);
-             UserStats.gamesPlayed += 1;
+            UserStats.gamesPlayed += 1;
         } else if (result === "lose") {
             UserStats.lossses += 1;
-             UserStats.gamesPlayed += 1;
+            UserStats.gamesPlayed += 1;
         } else {
             UserStats.gamesPlayed += 1;
             UserStats.ties +=1;
         }
     };
-    
+
     var UserStats = {
         wins: 0,
         lossses: 0,
         ties: 0,
         gamesPlayed: 0
     };
-    
+
     /*seting images on tie function*/
     var tieImageSet = function(user, comp) {
         if(user === "rock") {
@@ -57,7 +56,7 @@ $(document).ready(function(){
     } else {
         userImage = scissorsIcon;
     }
-    
+
     if(comp === "rock") {
         compImage = rockIcon;
     } else if(comp === "paper") {
@@ -65,10 +64,10 @@ $(document).ready(function(){
     } else {
         compImage = scissorsIcon;
     }};
-    
-    
-    // define and set new value for outcome 
-    
+
+
+    // define and set new value for outcome
+
     var runGame = function(user, comp) {
         if (user === comp) {
             tieImageSet(user, comp);
@@ -114,14 +113,14 @@ $(document).ready(function(){
                 return "You Lost";}
         }
     };
-    
-    
+
+
     // TEST TEST TEST TEST DELETE AFTER TEST
-    
+
     $('#mainText').click(function() {
         alert("Wins: " + UserStats.wins  + " Loses: " + UserStats.lossses + " Ties: " +UserStats.ties + " Games Played: " + UserStats.gamesPlayed );
     })
-    
+
     $("#mainText").mousedown(function() {
         $(this).addClass("headerClickDown");
     })
@@ -129,32 +128,32 @@ $(document).ready(function(){
         $(this).removeClass("headerClickDown");
     })
     // TEST TEST TEST TEST DELETE AFTER TEST
-    
-    
+
+
     // run the functions above
-    
+
     $("#cRock").click(function() {
         $(".buttons").hide();
         run = runGame("rock", compChoice());
         displayResults();
     });
-    
+
     $("#cPaper").click(function() {
         $(".buttons").hide();
         run = runGame("paper", compChoice());
         displayResults();
     });
-    
+
     $("#cScissors").click(function() {
         $(".buttons").hide();
         run = runGame("scissors", compChoice());
         displayResults();
     });
-    
-    
+
+
     var displayResults = function(user, comp){
         var elem = document.getElementById("results");
-        var inserthtml = 
+        var inserthtml =
                 "<div id ='b1_2'>" +
                     "<div id='b1_3'>" +
                         "<h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6 col-sm-6' id='userdis'>USER</h2>" +
@@ -177,8 +176,8 @@ $(document).ready(function(){
                 "</div>";
         elem.innerHTML = inserthtml;
     }
-    
-    
+
+
     $(".buttons").click(function() {
         $("#resetButton").removeClass("animated rotateIn");
         $(".buttons").removeClass("animated fadeIn");
@@ -186,9 +185,9 @@ $(document).ready(function(){
         $('#vs').addClass("animated zoomIn");
         $("#resultsText").addClass("animated fadeIn")
     })
-    
+
     /* Reset Button Click Event*/
-    
+
     $("#resetButton").click(function() {
         var empty = document.getElementById("results");
         empty.innerHTML = "";
@@ -198,8 +197,8 @@ $(document).ready(function(){
         $("#compImage").removeClass("animated bounceInDown");
         $("#vs").removeClass("animated zoomIn");
     });
-    
-  //end program  
+
+  //end program
 })
 
 // get rid of long ifstatement in function to set image values....
