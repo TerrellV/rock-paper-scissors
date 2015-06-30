@@ -1,0 +1,69 @@
+.statsbox1 {
+    margin: 35px 0;
+    margin-left:-15px;
+    margin-right:-15px;
+}
+.statsbox2 {
+    margin-left:-15px;
+    margin-right:-15px;
+}
+#wins, #loses, #ties, #total{
+    height: 170px;
+    background-color: #4CAF50;
+    color: white;
+    font-family: "tahoma"; sans-serif;
+    font-size: 20px;
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    border-radius: 3px;
+}
+#loses {
+    background-color: #8D6E63;
+}
+
+#ties {
+    background-color: #FFA726;
+}
+
+#total {
+    background-color: #4285F4;
+}
+.graybox {
+    background-color: #F2F2F2;
+    position: relative;
+    top: 25px;
+    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    border-radius: 3px;
+}
+.graybox h4{
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+}
+
+#backBox {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+#backIcon {
+    position: relative;
+    top: 1em;
+}
+.icondown {
+    background-color: #376abe;
+}
+
+ /*colors of buttons
+ green: #66BB6A
+ yellow: #FFA726
+ brown:
+ blue: #F2F2F2
+ red: #DB4437
+*/

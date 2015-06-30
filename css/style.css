@@ -45,26 +45,33 @@ box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.49);
     position: relative;
     top: 50px;
     -webkit-box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
--moz-box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
-box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);    
+    -moz-box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
+    box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
 }
 
 #appHeader {
-    height: 10em;
     background-color: #4285F4;
     margin: 0 -15px;
     -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
--moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 }
 
-#appHeaderText h2{
+#appHeaderText h2 {
     text-align: center;
     color: white;
     font-size: 30px;
-    position: relative;
-    top: 3vh;
     font-family: "tahoma";
+}
+
+#backIconPlaceholder{
+    text-align: center;
+}
+
+#statsIcon {
+position: relative;
+left: -8px;
+top: 6px;
 }
 
 #options {
@@ -103,7 +110,7 @@ box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
     margin: 2%;
 }
     /*Picture Formatting*/
-    
+
     /*END Picture Formatting*/
 
 /*END results Display*/
@@ -157,6 +164,7 @@ box-shadow: 1px 1px 10px 0px rgba(148, 142, 148, 0.64);
 
 #resetBox {
     width: 100%;
+    margin-top: -20px; // this edited
 }
 
 #centerDIV {
@@ -164,7 +172,7 @@ box-shadow: 1px 1px 10px 0px rgba(148, 142, 148, 0.64);
     text-align: center;
 }
 
-#resetButton {  
+#resetButton {
     margin: 0 auto;
     border-radius: 50%;
     border: 0px solid;
@@ -186,8 +194,13 @@ box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
     -webkit-animation-delay: .3s;
 }
 #resultsText {
-    -webkit-animation-delay: 1.5s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
 }
 #compImage {
     -webkit-animation-delay: 1s;
+}
+
+#backIcon {
+    z-index: 10;
 }

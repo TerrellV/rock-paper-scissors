@@ -1,15 +1,15 @@
 $(document).ready(function(){
-    alert("Working");
-
+    $("#backIcon").hide();
+    console.log("Working");
     //seting variables for result images
-    var rockIcon = "<img src='../images/Rock-Icon.png' class='icons'/>";
-    var paperIcon = "<img src='../images/Paper-Icon.png' class='icons'/>";
-    var scissorsIcon = "<img src='../images/Scissors-Icon.png' class='icons'/>";
+    var rockIcon = "<img src='../images/Rock-Icon.png' class='icons'/>",
+        paperIcon = "<img src='../images/Paper-Icon.png' class='icons'/>",
+        scissorsIcon = "<img src='../images/Scissors-Icon.png' class='icons'/>";
 
     //set global variables to track user and computer choices
-    var userImage = "....";
-    var compImage = "....";
-    run = "."
+    var userImage = "....",
+    compImage = "....";
+    gameResults = "."
     // defining computers response
 
     var compChoice = function() {
@@ -24,10 +24,9 @@ $(document).ready(function(){
         }
     };
 
-
     /*setting function and user object to log stats*/
 
-    var logStats = function(result) {
+    function logStats(result) {
         if(result === "win") {
             UserStats.wins += 1;
             UserStats.gamesPlayed += 1;
@@ -65,13 +64,12 @@ $(document).ready(function(){
         compImage = scissorsIcon;
     }};
 
-
     // define and set new value for outcome
 
     var runGame = function(user, comp) {
         if (user === comp) {
             tieImageSet(user, comp);
-            logStats("tie"); // havent added a tracker for ties yet
+            logStats("tie");
             return "Tie Game";
         };
         if (user === "rock") {
@@ -114,46 +112,45 @@ $(document).ready(function(){
         }
     };
 
-
-    // TEST TEST TEST TEST DELETE AFTER TEST
-
-    $('#mainText').click(function() {
-        alert("Wins: " + UserStats.wins  + " Loses: " + UserStats.lossses + " Ties: " +UserStats.ties + " Games Played: " + UserStats.gamesPlayed );
-    })
-
-    $("#mainText").mousedown(function() {
-        $(this).addClass("headerClickDown");
-    })
-    $("#mainText").mouseup(function() {
-        $(this).removeClass("headerClickDown");
-    })
-    // TEST TEST TEST TEST DELETE AFTER TEST
+    // DISPLAY STATS STATS STATS STATS STATS
+    $('#statsIcon').click(function() { // change element
+        $(".buttons").hide();
+        $(".statbox").addClass("animated bounce");
+        displayStats();
+        var elem = document.getElementById("appHeaderText");
+        elem.innerHTML = "";
+        elem.innerHTML = "<h2>User Statistics</h2>";
+        $('#resetButton').removeClass("animated rotateIn")
+        $("#backIcon").show();
+        $("#statsIcon").hide();
+    });
+    // DISPLAY STATS STATS STATS STATS STATS STATS
 
 
     // run the functions above
 
     $("#cRock").click(function() {
         $(".buttons").hide();
-        run = runGame("rock", compChoice());
+        gameResults = runGame("rock", compChoice());
         displayResults();
     });
 
     $("#cPaper").click(function() {
         $(".buttons").hide();
-        run = runGame("paper", compChoice());
+        gameResults = runGame("paper", compChoice());
         displayResults();
     });
 
     $("#cScissors").click(function() {
         $(".buttons").hide();
-        run = runGame("scissors", compChoice());
+        gameResults = runGame("scissors", compChoice());
         displayResults();
     });
 
 
-    var displayResults = function(user, comp){
-        var elem = document.getElementById("results");
-        var inserthtml =
+    function displayResults (){
+        var elem = document.getElementById("results"),
+            inserthtml =
                 "<div id ='b1_2'>" +
                     "<div id='b1_3'>" +
                         "<h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6 col-sm-6' id='userdis'>USER</h2>" +
@@ -170,33 +167,105 @@ $(document).ready(function(){
                     "<div class='displayitem' id='compImage'>" + compImage +
                     "</div>" +
                     "<div>" +
-                        "<h3 id ='resultsText'>" + run + //use function runGame to determine winner
+                        "<h3 id ='resultsText'>" + gameResults +
                         "</h3>" +
                     "</div>" +
                 "</div>";
         elem.innerHTML = inserthtml;
     }
 
+    function displayStats() {
+        var elem = document.getElementById("results"),
+            inserthtml =
+            "<div class='container-fluid statsbox1'>" +
+                "<div class='col-sm-4 col-sm-offset-1 animated fadeIn' id='wins'>" +
+                    "<h3>Wins</h3>" +
+                    "<div class='col-sm-10 col-sm-offset-1 graybox'>" +
+                        "<h4>" + UserStats.wins + "</h4>" +
+                    "</div>"+
+                "</div>" +
+                "<div class='col-sm-4 col-sm-offset-2 animated fadeIn' id='loses'>" +
+                    "<h3>Loses</h3>" +
+                    "<div class='col-sm-10 col-sm-offset-1 graybox'>" +
+                        "<h4>" + UserStats.lossses + "</h4>" +
+                    "</div>" +
+                "</div>" +
+            "</div>" +
+            "<div class='container-fluid statsbox2'>" +
+                "<div class='col-sm-4 col-sm-offset-1 animated fadeIn' id='ties'>" +
+                    "<h3>Ties</h3>" +
+                    "<div class='col-sm-10 col-sm-offset-1 graybox'>" +
+                        "<h4>" + UserStats.ties + "</h4>" +
+                    "</div>" +
+                "</div>" +
+                "<div class='col-sm-4 col-sm-offset-2 animated fadeIn' id='total'>" +
+                    "<h3>Total</h3>" +
+                    "<div class='col-sm-10 col-sm-offset-1 graybox'>" +
+                        "<h4>" + UserStats.gamesPlayed +"</h4>" +
+                    "</div>" +
+                "</div>" +
+            "</div>";
+        elem.innerHTML = inserthtml;
+    }
 
     $(".buttons").click(function() {
+        $('#resultsText').hide();
         $("#resetButton").removeClass("animated rotateIn");
         $(".buttons").removeClass("animated fadeIn");
         $("#compImage").addClass("animated bounceInDown");
         $('#vs').addClass("animated zoomIn");
-        $("#resultsText").addClass("animated fadeIn")
-    })
+
+        if (gameResults === "You Won"){
+            $('#resultsText').delay(2000).show(0).addClass("animated flash");
+        } else {
+            $('#resultsText').delay(2000).show(0).addClass("animated shake");
+        }
+    });
+
+    // backbutton click event
+    $("#backIcon").click(function() {
+        var emptyresults = document.getElementById("results");
+        emptyresults.innerHTML = "";
+        $(".buttons").show();
+        $(".buttons").addClass("animated fadeIn");
+        $("#compImage").removeClass("animated bounceInDown");
+        $("#vs").removeClass("animated zoomIn");
+        ResetAppTextHeader();
+        $("#backIcon").hide();
+        $("#statsIcon").show();
+    });
+
+    $('#backIconPlaceholder').mousedown(function(){
+        $("#backBox").addClass("icondown");
+    });
+
+    $('#backIconPlaceholder').mouseup(function(){
+        $("#backBox").removeClass("icondown");
+    });
 
     /* Reset Button Click Event*/
-
     $("#resetButton").click(function() {
-        var empty = document.getElementById("results");
-        empty.innerHTML = "";
+        clearresults();
         $(".buttons").show();
         $(this).addClass("animated rotateIn");
         $(".buttons").addClass("animated fadeIn");
         $("#compImage").removeClass("animated bounceInDown");
         $("#vs").removeClass("animated zoomIn");
+        ResetAppTextHeader();
+        $("#backIcon").hide();
+        $("#statsIcon").show();
     });
+
+    function ResetAppTextHeader () {
+        var elem = document.getElementById("appHeaderText");
+        elem.innerHTML = "";
+        elem.innerHTML = "<h2>Choose One</h2>";
+    }
+
+    function clearresults() {
+        var emptyresults = document.getElementById("results");
+        emptyresults.innerHTML = "";
+    }
 
   //end program
 })

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/ANIMATE.css">
+    <link rel="stylesheet" type="text/css" href="../css/stats.css">
 </head>
 
     <body id="body">
@@ -19,12 +20,21 @@
 
         <div class="container" id="app">
             <div class="container-fluid" id="appHeader">
-                <div class="col-md-10 col-md-offset-1" id="appHeaderText">
+                <div class='col-md-3' id="backIconPlaceholder">
+                    <div class='col-sm-10' id='backBox'>
+                        <img src='../images/stats.png' id='statsIcon'>
+                        <img src='../images/backicon.png' id='backIcon'>
+                    </div>
+                </div>
+                <div class="col-md-6 " id="appHeaderText">
+                    <!-- header changes on stats icon press -->
                     <h2>Choose One</h2>
+                </div>
+                <div class="col-md-3">
                 </div>
             </div>
                 <div id='results'>
-                    <!--inserting html from javascript here-->
+                    <!--inserting html from javascript. Results || Stats-->
                 </div>
                 <div id="options">
                     <button class="buttons" id="cRock">Rock</button>
@@ -48,10 +58,5 @@
 </html>
 
 <!--
-  insert icons
-  adjust h1 text that displayes choices
-  make all buttons the same length
   adjust sizing for work on smaller screens
-  insert a display winner function...
-  show user option then delay the computer display by 1 sec...
 -->
