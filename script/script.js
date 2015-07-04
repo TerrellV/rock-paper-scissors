@@ -8,8 +8,8 @@ $(document).ready(function(){
 
     //set global variables to track user and computer choices
     var userImage = "....",
-    compImage = "....";
-    gameResults = "."
+    compImage = "....",
+    gameResults = ".";
     // defining computers response
 
     var compChoice = function() {
@@ -256,7 +256,7 @@ $(document).ready(function(){
         $("#statsIcon").show();
     });
 
-    function ResetAppTextHeader () {
+    function ResetAppTextHeader() {
         var elem = document.getElementById("appHeaderText");
         elem.innerHTML = "";
         elem.innerHTML = "<h2>Choose One</h2>";
