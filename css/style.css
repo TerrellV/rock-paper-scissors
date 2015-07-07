@@ -109,9 +109,11 @@ top: 6px;
     font-weight: bold;
     margin: 2%;
 }
-    /*Picture Formatting*/
 
-    /*END Picture Formatting*/
+#resultsText {
+    font-size: 30px;
+    font-family: "tahoma", sans-serif;;
+}
 
 /*END results Display*/
 
@@ -193,12 +195,11 @@ box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 #vs {
     -webkit-animation-delay: .3s;
 }
-#resultsText {
-    -webkit-animation-delay: 0s;
-    -webkit-animation-iteration-count: 1;
-}
 #compImage {
-    -webkit-animation-delay: 1s;
+    -webkit-animation-delay: .3s;
+}
+#resultsText {
+    -webkit-animation-delay: 1.2s;
 }
 
 #backIcon {

@@ -1,6 +1,6 @@
 <!Doctype html>
 
-<html ng-app='App'>
+<html ng-app='myapp'>
 <head>
     <title>R-P-C</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -18,44 +18,105 @@
             </div>
         </div>
 
-        <div class="container" id="app">
+        <div class="container" id="app" ng-controller = "SetheaderController as app">
             <div class="container-fluid" id="appHeader">
                 <div class='col-md-3' id="backIconPlaceholder">
                     <div class='col-sm-10' id='backBox'>
-                        <img src='../images/stats.png' id='statsIcon'>
-                        <img src='../images/backicon.png' id='backIcon'>
+                        <img src='../images/stats.png' id='statsIcon' ng-click = "app.onStatsIconClick()" ng-show = "app.showstatsIcon">
+                        <img src='../images/backicon.png' id='backIcon' ng-click = "app.Reset()" ng-show = "app.showbackIcon">
                     </div>
                 </div>
                 <div class="col-md-6 " id="appHeaderText">
-                    <!-- header changes on stats icon press -->
-                    <h2>Choose One</h2>
+                    <h2>{{app.header}}</h2>
                 </div>
                 <div class="col-md-3">
                 </div>
             </div>
                 <div id='results'>
                     <!--inserting html from javascript. Results || Stats-->
+
+                    <!-- REVIEW:  RESULTS-->
+                    <div ng-show="app.showresults" id="results">
+                        <div id ='b1_2'>
+                            <div id='b1_3'>
+                                <h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6' id='userdis'>USER</h2>
+                                <h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6' id='compdis'>COMP</h2>
+                            </div>
+                        </div>
+
+                        <div id ='displayImages' ng-switch on="app.userChoice">
+                            <div class='displayitem'>
+                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
+                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
+                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                            </div>
+                            <div class='displayitem'>
+                                <span id='vs'>VS</span>
+                            </div>
+                            <div class='displayitem' id='compImage' ng-switch on="app.compChoice" ng-Class = "{'animated zoomIn': app.showresults }">
+                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
+                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
+                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                            </div>
+                            <div>
+                                <h3 id ='resultsText' ng-Class = "{'animated bounceIn': app.showresults }">{{app.gameResults}}</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- REVIEW: STATS -->
+                    <div ng-show="app.showstats">
+                        <div class='container-fluid statsbox1'>
+                            <div class='col-sm-4 col-sm-offset-1 animated fadeIn' id='wins'>
+                                    <h3>Wins</h3>
+                                    <div class='col-sm-10 col-sm-offset-1 graybox'>
+                                        <h4>{{app.stats.wins}}</h4>
+                                    </div>
+                            </div>
+                            <div class='col-sm-4 col-sm-offset-2 animated fadeIn' id='loses'>
+                                <h3>Loses</h3>
+                                <div class='col-sm-10 col-sm-offset-1 graybox'>
+                                    <h4>{{app.stats.lossses}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='container-fluid statsbox2'>
+                            <div class='col-sm-4 col-sm-offset-1 animated fadeIn' id='ties'>
+                                <h3>Ties</h3>
+                                <div class='col-sm-10 col-sm-offset-1 graybox'>
+                                     <h4>{{app.stats.ties}}</h4>
+                                </div>
+                            </div>
+                            <div class='col-sm-4 col-sm-offset-2 animated fadeIn' id='total'>
+                                <h3>Total</h3>
+                                <div class='col-sm-10 col-sm-offset-1 graybox'>
+                                    <h4>{{app.stats.gamesPlayed}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div id="options">
-                    <button class="buttons" id="cRock">Rock</button>
-                    <button class="buttons" id="cPaper">Paper</button>
-                    <button class="buttons" id="cScissors">Scissors</button>
+                <div id="options" ng-show="app.showbuttons">
+                    <button class="buttons" id="cRock" ng-click = "app.onOptionPick('R')" >Rock</button>
+                    <button class="buttons" id="cPaper"  ng-click = "app.onOptionPick('P')">Paper</button>
+                    <button class="buttons" id="cScissors"  ng-click = "app.onOptionPick('S')">Scissors</button>
                 </div>
 
             <div class="container-fluid" id="resetBox">
                 <div id="centerDIV">
                     <button id="resetButton" ><img src="../images/Xicon.png"
-                      alt="ClearButton" id="resetIcon" height="100px" width="100px">
+                      alt="ClearButton" id="resetIcon" height="100px" width="100px" ng-click="app.Reset()">
                     </button>
                 </div>
             </div>
         </div>
     <script type="text/javascript" src='../script/angular.js'></script>
+    <script type="text/javascript" src='../script/app.js'></script>
     <script type="text/javascript" src="..//script/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
-    </script>
+    <!-- <script type="text/javascript" src="../script/script.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </body>
-    <script type="text/javascript" src="../script/script.js"></script>
 </html>
 
 <!--
