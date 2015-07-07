@@ -162,8 +162,5 @@
             // functions to remove classes from stats and results but add to option pannel
         }
 
-        ////////////////// Add Classes For Animations ///////////////////
-
-
     });
 })();
