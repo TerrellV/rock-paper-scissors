@@ -4,6 +4,11 @@
 }
  /* resseting the page */
 
+.centered {
+     float: none;
+     margin: 0 auto;
+ }
+
 /*background*/
 #body {
     background-color: #ECECEC;
@@ -25,9 +30,9 @@
 
 #app {
     background-color: #F2F2F2;
-    position: relative;
-    top: 50px;
-    margin: 0 auto;
+    width: 700px;
+    margin-top: 3em;
+
 }
 
 #appHeader {
