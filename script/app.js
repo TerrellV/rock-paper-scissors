@@ -9,16 +9,16 @@
 
         // START SCREEN - BEGINNING VIEW
         this.header = "Choose One";
-        this.showstatsIcon = true;
         this.showbuttons = true;
+        this.showResetButton = false;
         this.showresults = false;
         this.showstats = false;
-        this.showbackIcon = false;
         this.userChoice = "";
         this.compChoice = "";
         this.rockIcon = "../images/Rock-Icon.png";
         this.paperIcon = "../images/Paper-Icon.png";
         this.scissorsIcon = "../images/Scissors-Icon.png";
+        this.statsBackIcon = 'stats';
 
 ///////////////// Game Logic /////////////////////
 
@@ -70,7 +70,7 @@
         }
 
         function logLoss () {
-            UserStats.lossses += 1;
+            UserStats.losses += 1;
             UserStats.gamesPlayed += 1;
             return "You Lost";
         }
@@ -84,7 +84,7 @@
         // STAT VALUE STORAGE
         var UserStats = {
             wins: 0,
-            lossses: 0,
+            losses: 0,
             ties: 0,
             gamesPlayed: 0
         };
@@ -125,6 +125,7 @@
             this.userChoice = user;
             this.compChoice = b;
             this.showresults = true;
+            this.showResetButton = true;
             this.showbuttons = false;
             this.gameResults = runGame(user,b);
             arr.push(user.slice(0,1).toUpperCase());
@@ -141,13 +142,15 @@
         };
 
         //STATS SHOW on click of downarrow
-        this.onStatsIconClick = function(){
-            this.header = "User Statistics";
+        this.clickStats = function(){
+            this.header = "User Stats";
             this.showbackIcon = true;
             this.showstats = true;
             this.showresults = false;
             this.showbuttons = false;
             this.showstatsIcon = false;
+            this.showResetButton = false;
+            this.statsBackIcon = 'back';
             // function to add classes to stats and remove from options
         }
 
@@ -159,6 +162,8 @@
             this.showbackIcon = false;
             this.showresults = false;
             this.showstats = false;
+            this.showResetButton = false;
+            this.statsBackIcon = 'stats';
             // functions to remove classes from stats and results but add to option pannel
         }
 

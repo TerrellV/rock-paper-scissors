@@ -10,69 +10,42 @@
 }
 
 #header {
-    background-color: #4285F4;
-    height: 129px;
+    background-color: #2196F3;
     color: white;
-    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
--moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    height: 8em;
 }
 
 #headerText h1{
     text-align: center;
-    font-size: 6vh;
-    font-weight: bold;
-    font-family:"tahoma";
-    position:relative;
-    top: 1vh;
-    width: 30%;
-    margin: 0 auto; /* ignored the use of grid*/
+    font-size: 40px;
+    font-family:"Roboto";
 }
-
-.headerClickDown {
-    color: #4d4f50;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.49);
--moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.49);
-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.49);
-}
-
 
 /*Begin App*/
 
 #app {
     background-color: #F2F2F2;
-    width: 40em;
     position: relative;
     top: 50px;
-    -webkit-box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
-    -moz-box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
-    box-shadow: 2px 2px 8px 0px rgba(207,207,207,1);
+    margin: 0 auto;
 }
 
 #appHeader {
-    background-color: #4285F4;
-    margin: 0 -15px;
-    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
-    -moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
-    box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    background-color: #2196F3;
 }
 
 #appHeaderText h2 {
     text-align: center;
     color: white;
     font-size: 30px;
-    font-family: "tahoma";
+    font-family: "Roboto";
 }
 
-#backIconPlaceholder{
+
+#headerButton {
     text-align: center;
 }
 
-#statsIcon {
-position: relative;
-left: -8px;
-top: 6px;
-}
 
 #options {
     width: 200px;
@@ -102,6 +75,13 @@ top: 6px;
     text-align: center;
 }
 
+.icons {
+    height: 10vw;
+    min-height: 100px;
+    width: 10vw;
+    min-width: 100px;
+}
+
 .displayitem {
     display: inline;
     font-size: 40px;
@@ -112,10 +92,17 @@ top: 6px;
 
 #resultsText {
     font-size: 30px;
-    font-family: "tahoma", sans-serif;;
+    font-family: "Roboto", sans-serif;;
 }
 
 /*END results Display*/
+
+/*stats*/
+
+#wins,#loses, #ties, #total {
+    text-align: center;
+}
+/*END Stats*/
 
 /* Begin Choices */
 #container{
@@ -130,7 +117,7 @@ top: 6px;
 .buttons {
     margin: 20px 0;
     font-size: 20px;
-    font-family: "tahoma", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #F2F2F2;
     padding: .5em 1.5em;
     border-radius: 4px;
@@ -138,9 +125,6 @@ top: 6px;
     min-width: 100px;
     border: 1px solid rgba(255, 255, 255, 0);
 /*    set  border transparancy to 0 for btn*/
-    -webkit-box-shadow: 1px 1px 10px 0px rgba(148,142,148,1);
--moz-box-shadow: 1px 1px 10px 0px rgba(148,142,148,1);
-box-shadow: 1px 1px 10px 0px rgba(148, 142, 148, 0.64);
 }
 
 #cRock{
@@ -155,19 +139,7 @@ box-shadow: 1px 1px 10px 0px rgba(148, 142, 148, 0.64);
     background-color: #FFA726;
 }
 
-
-
-.icons {
-    height: 18vh;
-    width: 18vh;
-}
-
 /*restart Button*/
-
-#resetBox {
-    width: 100%;
-    margin-top: -20px; // this edited
-}
 
 #centerDIV {
     margin: 0 auto;
@@ -175,23 +147,14 @@ box-shadow: 1px 1px 10px 0px rgba(148, 142, 148, 0.64);
 }
 
 #resetButton {
-    margin: 0 auto;
-    border-radius: 50%;
-    border: 0px solid;
-    background-color: #DB4437;
-    position: relative;
-    top: 50px;
-    -webkit-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
--moz-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
-box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
+    height: 50px;
+    width: 200px;
+    margin: 20px;
+    font-size: 20px;
 }
 
 
-#resetIcon {
-    padding: 33px;
-}
 /*seting animations*/
-
 #vs {
     -webkit-animation-delay: .3s;
 }
@@ -200,8 +163,4 @@ box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.33);
 }
 #resultsText {
     -webkit-animation-delay: 1.2s;
-}
-
-#backIcon {
-    z-index: 10;
 }

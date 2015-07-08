@@ -2,35 +2,39 @@
 
 <html ng-app='myapp'>
 <head>
-    <title>R-P-C</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <title>R-P-S</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/ANIMATE.css">
-    <link rel="stylesheet" type="text/css" href="../css/stats.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-red.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 </head>
 
     <body id="body">
 
-        <div class="fluid-container" id="header">
-            <div class="col-md-4 col-md-offset-4" id="headerText">
+        <div class="mdl-grid mdl-shadow--2dp "id="header">
+            <div id="headerText" class="mdl-cell mdl-cell--12-col mdl-cell--middle">
                 <h1 id="mainText">Play</h1>
             </div>
         </div>
 
-        <div class="container" id="app" ng-controller = "SetheaderController as app">
-            <div class="container-fluid" id="appHeader">
-                <div class='col-md-3' id="backIconPlaceholder">
-                    <div class='col-sm-10' id='backBox'>
-                        <img src='../images/stats.png' id='statsIcon' ng-click = "app.onStatsIconClick()" ng-show = "app.showstatsIcon">
-                        <img src='../images/backicon.png' id='backIcon' ng-click = "app.Reset()" ng-show = "app.showbackIcon">
-                    </div>
+        <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--12-col-phone" id="app" ng-controller = "SetheaderController as app">
+            <div class="mdl-grid container-fluid" id="appHeader">
+                <div  class="mdl-cell mdl-cell--middle"ng-switch on="app.statsBackIcon" id="headerButton">
+
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary" ng-switch-when="stats" ng-click="app.clickStats()">
+                        <i  class="material-icons"id='statsIcon'>assignment_turned</i>
+                    </button>
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary" ng-switch-when="back" ng-click="app.Reset()">
+                        <i class="material-icons"id='backIcon'>arrow_back</i>
+                    </button>
+
                 </div>
-                <div class="col-md-6 " id="appHeaderText">
+                <div class="mdl-cell mdl-cell--middle" id="appHeaderText">
                     <h2>{{app.header}}</h2>
                 </div>
-                <div class="col-md-3">
-                </div>
+
             </div>
                 <div id='results'>
                     <!--inserting html from javascript. Results || Stats-->
@@ -44,8 +48,8 @@
                             </div>
                         </div>
 
-                        <div id ='displayImages' ng-switch on="app.userChoice">
-                            <div class='displayitem'>
+                        <div id ='displayImages'>
+                            <div class='displayitem'  ng-switch on="app.userChoice" id="userImage">
                                 <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
                                 <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
                                 <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
@@ -65,48 +69,59 @@
                     </div>
 
                     <!-- REVIEW: STATS -->
-                    <div ng-show="app.showstats">
-                        <div class='container-fluid statsbox1'>
-                            <div class='col-sm-4 col-sm-offset-1 animated fadeIn' id='wins'>
-                                    <h3>Wins</h3>
-                                    <div class='col-sm-10 col-sm-offset-1 graybox'>
-                                        <h4>{{app.stats.wins}}</h4>
-                                    </div>
+                    <div ng-show="app.showstats" id="stats">
+
+                        <div class='mdl-grid animated fadeIn' id="statsrow">
+                            <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='wins'>
+                                <div class='mdl-card__actions'>
+                                    <h1>{{app.stats.wins}}</h1>
+                                </div>
+                                <div class="mdl-card__title">
+                                    <h1 class="mdl-card__title-text">Wins</h1>
+                                </div>
                             </div>
-                            <div class='col-sm-4 col-sm-offset-2 animated fadeIn' id='loses'>
-                                <h3>Loses</h3>
-                                <div class='col-sm-10 col-sm-offset-1 graybox'>
-                                    <h4>{{app.stats.lossses}}</h4>
+                            <div class=' mdl-cell  mdl-cell--6-col mdl-card mdl-shadow--2dp' id='loses'>
+                                <div class='mdl-card__actions'>
+                                    <h1>{{app.stats.losses}}</h1>
+                                </div>
+                                <div class="mdl-card__title">
+                                    <h1 class="mdl-card__title-text">losses</h1>
                                 </div>
                             </div>
                         </div>
-                        <div class='container-fluid statsbox2'>
-                            <div class='col-sm-4 col-sm-offset-1 animated fadeIn' id='ties'>
-                                <h3>Ties</h3>
-                                <div class='col-sm-10 col-sm-offset-1 graybox'>
-                                     <h4>{{app.stats.ties}}</h4>
+
+
+                        <div class='mdl-grid statsbox1 animated fadeIn stats-row'>
+                            <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='ties'>
+                                <div class='mdl-card__actions'>
+                                    <h1>{{app.stats.ties}}</h1>
+                                </div>
+                                <div class="mdl-card__title">
+                                    <h1 class="mdl-card__title-text">Ties</h1>
                                 </div>
                             </div>
-                            <div class='col-sm-4 col-sm-offset-2 animated fadeIn' id='total'>
-                                <h3>Total</h3>
-                                <div class='col-sm-10 col-sm-offset-1 graybox'>
-                                    <h4>{{app.stats.gamesPlayed}}</h4>
+                            <div class=' mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='total'>
+                                <div class='mdl-card__actions'>
+                                    <h1>{{app.stats.gamesPlayed}}</h1>
+                                </div>
+                                <div class="mdl-card__title">
+                                    <h1 class="mdl-card__title-text">Total</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
                 <div id="options" ng-show="app.showbuttons">
-                    <button class="buttons" id="cRock" ng-click = "app.onOptionPick('R')" >Rock</button>
-                    <button class="buttons" id="cPaper"  ng-click = "app.onOptionPick('P')">Paper</button>
-                    <button class="buttons" id="cScissors"  ng-click = "app.onOptionPick('S')">Scissors</button>
+                    <button class="buttons mdl-shadow--2dp" id="cRock" ng-click = "app.onOptionPick('R')" >Rock</button>
+                    <button class="buttons mdl-shadow--2dp" id="cPaper"  ng-click = "app.onOptionPick('P')">Paper</button>
+                    <button class="buttons mdl-shadow--2dp" id="cScissors"  ng-click = "app.onOptionPick('S')">Scissors</button>
                 </div>
 
-            <div class="container-fluid" id="resetBox">
+            <div class="container-fluid " id="resetBox">
                 <div id="centerDIV">
-                    <button id="resetButton" ><img src="../images/Xicon.png"
-                      alt="ClearButton" id="resetIcon" height="100px" width="100px" ng-click="app.Reset()">
+                    <button  id="resetButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect md-" ng-click="app.Reset()" ng-show="app.showResetButton" >
+                        Play Again
                     </button>
                 </div>
             </div>
@@ -114,8 +129,8 @@
     <script type="text/javascript" src='../script/angular.js'></script>
     <script type="text/javascript" src='../script/app.js'></script>
     <script type="text/javascript" src="..//script/jquery-1.11.3.min.js"></script>
-    <!-- <script type="text/javascript" src="../script/script.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     </body>
 </html>
 
