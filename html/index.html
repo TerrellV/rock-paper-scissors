@@ -3,111 +3,105 @@
 <html ng-app='myapp'>
 <head>
     <title>R-P-S</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/ANIMATE.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-red.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-    <body id="body">
-
-        <div class="mdl-grid mdl-shadow--2dp "id="header">
-            <div id="headerText" class="mdl-cell mdl-cell--12-col mdl-cell--middle">
-                <h1 id="mainText">Play</h1>
-            </div>
+<body id="body">
+    <div class="mdl-grid mdl-shadow--2dp "id="header">
+        <div id="headerText" class="mdl-cell mdl-cell--middle">
+            <h1 id="mainText">R-P-S</h1>
         </div>
+    </div>
 
-    <div class="container">
-        <div class="center-block mdl-shadow--2dp" id="app" ng-controller = "SetheaderController as app">
+    <div class="mdl-grid">
+        <div class="col-md-5 mdl-shadow--2dp" ng-controller="MainController as app" id="app">
+
             <div class="mdl-grid container-fluid" id="appHeader">
-                <div  class="mdl-cell mdl-cell--middle"ng-switch on="app.statsBackIcon" id="headerButton">
-
+                <div  class="mdl-cell mdl-cell--middle" ng-switch on="app.statsBackIcon" id="headerButton">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary" ng-switch-when="stats" ng-click="app.clickStats()">
                         <i  class="material-icons"id='statsIcon'>assignment_turned</i>
                     </button>
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary" ng-switch-when="back" ng-click="app.Reset()">
                         <i class="material-icons"id='backIcon'>arrow_back</i>
                     </button>
-
                 </div>
                 <div class="mdl-cell mdl-cell--middle" id="appHeaderText">
-                    <h2>{{app.header}}</h2>
+                    <h2>{{app.head}}</h2>
+                </div>
+            </div>
+
+            <div id='appContent'>
+
+                <div ng-show="app.showresults" class="col-md-12" id="GameResults">
+                    <div class="mdl-shadow--2dp col-md-4" id="UserBox">
+                        <div class="">
+                            <h2 class ='' id='compdis'>Human</h2>
+                        </div>
+                        <div class='displayitem'  ng-switch on="app.userChoice" id="userImage">
+                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
+                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
+                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                        </div>
+                    </div>
+
+                    <div class="mdl-shadow--2dp col-md-4" id="ComputerBox">
+                        <div class="">
+                            <h2 class ='' id='compdis'>Computer</h2>
+                        </div>
+                        <div class='displayitem' id='compImage' ng-switch on="app.compChoice" ng-Class = "{'animated zoomIn': app.showresults }">
+                            <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
+                            <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
+                            <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-                <div id='results'>
-                    <!--inserting html from javascript. Results || Stats-->
 
-                    <!-- REVIEW:  RESULTS-->
-                    <div ng-show="app.showresults" id="results">
-                        <div id ='b1_2'>
-                            <div id='b1_3'>
-                                <h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6' id='userdis'>USER</h2>
-                                <h2 class ='resultHeader col-lg-6 col-md-6 col-sm-6' id='compdis'>COMP</h2>
+
+                <!-- REVIEW: STATS -->
+                <div ng-show="app.showstats" id="stats">
+                    <div class='mdl-grid animated fadeIn' id="statsrow">
+                        <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='wins'>
+                            <div class='mdl-card__actions'>
+                                <h1>{{app.stats.wins}}</h1>
+                            </div>
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">Wins</h1>
                             </div>
                         </div>
-
-                        <div id ='displayImages'>
-                            <div class='displayitem'  ng-switch on="app.userChoice" id="userImage">
-                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
-                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
-                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                        <div class=' mdl-cell  mdl-cell--6-col mdl-card mdl-shadow--2dp' id='loses'>
+                            <div class='mdl-card__actions'>
+                                <h1>{{app.stats.losses}}</h1>
                             </div>
-                            <div class='displayitem'>
-                                <span id='vs'>VS</span>
-                            </div>
-                            <div class='displayitem' id='compImage' ng-switch on="app.compChoice" ng-Class = "{'animated zoomIn': app.showresults }">
-                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
-                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
-                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
-                            </div>
-                            <div>
-                                <h3 id ='resultsText' ng-Class = "{'animated bounceIn': app.showresults }">{{app.gameResults}}</h3>
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">losses</h1>
                             </div>
                         </div>
                     </div>
 
-                    <!-- REVIEW: STATS -->
-                    <div ng-show="app.showstats" id="stats">
 
-                        <div class='mdl-grid animated fadeIn' id="statsrow">
-                            <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='wins'>
-                                <div class='mdl-card__actions'>
-                                    <h1>{{app.stats.wins}}</h1>
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">Wins</h1>
-                                </div>
+                    <div class='mdl-grid statsbox1 animated fadeIn stats-row'>
+                        <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='ties'>
+                            <div class='mdl-card__actions'>
+                                <h1>{{app.stats.ties}}</h1>
                             </div>
-                            <div class=' mdl-cell  mdl-cell--6-col mdl-card mdl-shadow--2dp' id='loses'>
-                                <div class='mdl-card__actions'>
-                                    <h1>{{app.stats.losses}}</h1>
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">losses</h1>
-                                </div>
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">Ties</h1>
                             </div>
                         </div>
-
-
-                        <div class='mdl-grid statsbox1 animated fadeIn stats-row'>
-                            <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='ties'>
-                                <div class='mdl-card__actions'>
-                                    <h1>{{app.stats.ties}}</h1>
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">Ties</h1>
-                                </div>
+                        <div class=' mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='total'>
+                            <div class='mdl-card__actions'>
+                                <h1>{{app.stats.gamesPlayed}}</h1>
                             </div>
-                            <div class=' mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='total'>
-                                <div class='mdl-card__actions'>
-                                    <h1>{{app.stats.gamesPlayed}}</h1>
-                                </div>
-                                <div class="mdl-card__title">
-                                    <h1 class="mdl-card__title-text">Total</h1>
-                                </div>
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">Total</h1>
                             </div>
                         </div>
                     </div>
@@ -119,23 +113,21 @@
                     <button class="buttons mdl-shadow--2dp" id="cScissors"  ng-click = "app.onOptionPick('S')">Scissors</button>
                 </div>
 
-            <div class="container-fluid " id="resetBox">
-                <div id="centerDIV">
-                    <button  id="resetButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect md-" ng-click="app.Reset()" ng-show="app.showResetButton" >
-                        Play Again
-                    </button>
+                <div class="container-fluid " id="resetBox">
+                    <div id="centerDIV">
+                        <button  id="resetButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect md-" ng-click="app.Reset()" ng-show="app.showresults" >
+                            Play Again
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src='../script/angular.js'></script>
-    <script type="text/javascript" src='../script/app.js'></script>
-    <script type="text/javascript" src="..//script/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+
+        <script type="text/javascript" src='../script/angular.js'></script>
+        <script type="text/javascript" src='../script/app.js'></script>
+        <script type="text/javascript" src="..//script/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     </body>
 </html>
-
-<!--
-  adjust sizing for work on smaller screens
--->

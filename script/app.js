@@ -1,24 +1,21 @@
 (function(){
     var myapp = angular.module('myapp', []);
 
-    myapp.controller('SetheaderController', function(){
+    myapp.controller('MainController', function(){
 
         //b represents comp choice - Random || Predicted
         var b = compChoice();
         var arr = [];
 
         // START SCREEN - BEGINNING VIEW
-        this.header = "Choose One";
+        this.head = "Choose One";
+        this.statsBackIcon = 'stats';
         this.showbuttons = true;
-        this.showResetButton = false;
         this.showresults = false;
         this.showstats = false;
-        this.userChoice = "";
-        this.compChoice = "";
         this.rockIcon = "../images/Rock-Icon.png";
         this.paperIcon = "../images/Paper-Icon.png";
         this.scissorsIcon = "../images/Scissors-Icon.png";
-        this.statsBackIcon = 'stats';
 
 ///////////////// Game Logic /////////////////////
 
@@ -64,34 +61,35 @@
 
         // define logging functions
         function logWin () {
-            UserStats.wins += 1;
-            UserStats.gamesPlayed += 1;
+            stats.wins += 1;
+            stats.gamesPlayed += 1;
             return "You Won";
         }
 
         function logLoss () {
-            UserStats.losses += 1;
-            UserStats.gamesPlayed += 1;
+            stats.losses += 1;
+            stats.gamesPlayed += 1;
             return "You Lost";
         }
 
         function logTie () {
-            UserStats.gamesPlayed += 1;
-            UserStats.ties +=1;
+            stats.gamesPlayed += 1;
+            stats.ties +=1;
             return "It's a Tie";
         }
 
         // STAT VALUE STORAGE
-        var UserStats = {
+        var stats = {
             wins: 0,
             losses: 0,
             ties: 0,
             gamesPlayed: 0
         };
-        this.stats = UserStats; // allowing for reference in html
+        this.stats = stats;
+         // allowing for reference in html
 
-        // Store Given Value Based on Last 2 options.
-        // ex) last 3 choices [R,P,S] set hist.R.P = 'S'
+        // Store Given Value Based on Last 2 user options.
+        // ex) if last 3 choices [R,P,S] then set hist.R.P = 'S'
         var hist = {
             R:{
                R:null,
@@ -125,9 +123,9 @@
             this.userChoice = user;
             this.compChoice = b;
             this.showresults = true;
-            this.showResetButton = true;
             this.showbuttons = false;
             this.gameResults = runGame(user,b);
+            // computer tracking algorithm
             arr.push(user.slice(0,1).toUpperCase());
             if (arr.length > 2) {
                 hist[arr[0]][arr[1]] = arr[2];
@@ -138,32 +136,26 @@
                     b = botrun();
                 }
             };
-            // function to add classes for animations
         };
 
         //STATS SHOW on click of downarrow
         this.clickStats = function(){
-            this.header = "User Stats";
-            this.showbackIcon = true;
+            this.head = "User Stats";
+            this.statsBackIcon = 'back';
             this.showstats = true;
             this.showresults = false;
             this.showbuttons = false;
-            this.showstatsIcon = false;
-            this.showResetButton = false;
-            this.statsBackIcon = 'back';
-            // function to add classes to stats and remove from options
         }
 
-        // RESET to beginning View on click of back or redCircle
+        // RESET to beginning View on click of back or red button
         this.Reset = function(user,comp){
-            this.header = "Choose One";
+            this.head = "Choose One";
+            this.statsBackIcon = 'stats';
             this.showstatsIcon = true;
             this.showbuttons = true;
             this.showbackIcon = false;
-            this.showresults = false;
             this.showstats = false;
-            this.showResetButton = false;
-            this.statsBackIcon = 'stats';
+            this.showresults = false;
             // functions to remove classes from stats and results but add to option pannel
         }
 
