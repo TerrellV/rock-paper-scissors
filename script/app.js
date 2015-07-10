@@ -10,13 +10,16 @@
         // START SCREEN - BEGINNING VIEW
         this.head = "Choose One";
         this.statsBackIcon = 'stats';
+        this.showOtherContent = false;
         this.showbuttons = true;
         this.showresults = false;
         this.showstats = false;
         this.rockIcon = "../images/Rock-Icon.png";
         this.paperIcon = "../images/Paper-Icon.png";
         this.scissorsIcon = "../images/Scissors-Icon.png";
-
+        this.gitUrl = "https://github.com/MirPresT";
+        this.twitterUrl = "https://twitter.com/TerrellVest7";
+        this.facebookUrl = "https://www.facebook.com/terrell.vest7";
 ///////////////// Game Logic /////////////////////
 
         // set random value for computer
@@ -143,6 +146,17 @@
             this.head = "User Stats";
             this.statsBackIcon = 'back';
             this.showstats = true;
+            this.showOtherContent = false;
+            this.showresults = false;
+            this.showbuttons = false;
+        }
+
+        // other panel show on click of more
+        this.clickMore = function(){
+            this.head = "Other Content";
+            this.statsBackIcon = 'back';
+            this.showOtherContent = true;
+            this.showstats = false;
             this.showresults = false;
             this.showbuttons = false;
         }
@@ -153,6 +167,7 @@
             this.statsBackIcon = 'stats';
             this.showstatsIcon = true;
             this.showbuttons = true;
+            this.showOtherContent = false;
             this.showbackIcon = false;
             this.showstats = false;
             this.showresults = false;

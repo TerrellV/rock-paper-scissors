@@ -9,66 +9,6 @@
     background-color: #ECECEC;
 }
 
-#header {
-    background-color: #4d4d4d;
-    color: white;
-    height: 100px;
-}
-
-#headerText h1{
-    text-align: center;
-    font-size: 50px;
-    font-family:"Roboto";
-    font-weight: bold;
-}
-
-/*Begin App*/
-#app {
-    background-color: #F2F2F2;
-    margin: 3em auto;
-
-}
-
-#appHeader {
-    background-color: #2196F3;
-}
-
-#appHeaderText h2 {
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    font-family: "Roboto";
-}
-
-#headerButton {
-    text-align: center;
-}
-
-#options {
-    width: 200px;
-    margin: 60px auto;
-    text-align: center;
-}
-
-
-/*Begin results Display*/
-#UserBox, #ComputerBox {
-    text-align: center;
-    background-color: yellow;
-}
-
-.container {
-  text-align: center;
-}
-
-#GameResults {
-  display: inline-block;
-};
-
-.icons {
-  height: 200px;
-  width: 200px;
-}
 
 
 
@@ -83,54 +23,19 @@
 
 
 
-/*END results Display*/
-
-/*stats*/
-
-#wins,#loses, #ties, #total {
-    text-align: center;
-}
-/*END Stats*/
-
-/* Begin Choices */
-
-.buttons {
-    display: block;
-    margin: 1em 0;
-    font-size: 20px;
-    font-family: "Roboto", sans-serif;
-    color: #F2F2F2;
-    padding:20px;
-    width: 200px;
-    border: 1px solid rgba(255, 255, 255, 0);
-}
 
 
 
-#cRock{
-    background-color: #8D6E63;
-}
 
-#cPaper{
-    background-color: #66BB6A;
-}
 
-#cScissors{
-    background-color: #FFA726;
-}
 
-/*restart Button*/
-#centerDIV {
-    margin: 0 auto;
-    text-align: center;
-}
 
-#resetButton {
-    height: 50px;
-    width: 200px;
-    margin: 20px;
-    font-size: 20px;
-}
+
+
+
+
+
+
 
 /*seting animations*/
 #vs {
@@ -142,3 +47,16 @@
 #resultsText {
     -webkit-animation-delay: 1.2s;
 }
+
+/*
+#cRock{
+    background-color: #8D6E63;
+}
+
+#cPaper{
+    background-color: #66BB6A;
+}
+
+#cScissors{
+    background-color: #FFA726;
+}*/
