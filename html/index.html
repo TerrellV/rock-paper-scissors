@@ -1,6 +1,7 @@
 <!Doctype html>
 
 <html ng-app='myapp'>
+
 <head>
     <title>R-P-S</title>
     <meta charset="utf-8">
@@ -8,14 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-red.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="../css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
+    <!-- just working on something to see how it beautifys.. -->
 </head>
 
 <body id="body" ng-controller="MainController as app">
-    <div class="container-fluid mdl-shadow--2dp "id="pageheader">
+    <div class="container-fluid mdl-shadow--2dp " id="pageheader">
         <div class="mdl-grid">
             <h1 id="mainText" class="mdl-cell mdl-cell--middle">R-P-S</h1>
         </div>
@@ -25,7 +26,7 @@
         <div class="col-md-4 mdl-shadow--2dp" id="app">
             <!-- ////////// APP HEADER ////////// -->
             <div class="mdl-grid" id="appHeader">
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--middle" id="appHeaderButtons" ng-switch on ="app.statsBackIcon">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--middle" id="appHeaderButtons" ng-switch on="app.statsBackIcon">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary" ng-switch-when="stats" ng-click="app.clickStats()">
                         <i class="material-icons">assignment_turned</i>
                     </button>
@@ -34,7 +35,7 @@
                     </button>
                 </div>
                 <div class="mdl-cell mdl-cell--6-col" id="appHeadertext">
-                <h2>{{app.head}}</h2>
+                    <h2>{{app.head}}</h2>
 
                 </div>
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--middle" id="appHeaderMore">
@@ -48,27 +49,27 @@
             <div class="" id="appContent">
                 <!-- OPTIONS LIST  -->
                 <div id="options" ng-show="app.showbuttons">
-                    <button class="buttons mdl-shadow--2dp" id="cRock" ng-click = "app.onOptionPick('R')" >Rock</button>
-                    <button class="buttons mdl-shadow--2dp" id="cPaper"  ng-click = "app.onOptionPick('P')">Paper</button>
-                    <button class="buttons mdl-shadow--2dp" id="cScissors"  ng-click = "app.onOptionPick('S')">Scissors</button>
+                    <button class="buttons mdl-shadow--2dp" id="cRock" ng-click="app.onOptionPick('R')">Rock</button>
+                    <button class="buttons mdl-shadow--2dp" id="cPaper" ng-click="app.onOptionPick('P')">Paper</button>
+                    <button class="buttons mdl-shadow--2dp" id="cScissors" ng-click="app.onOptionPick('S')">Scissors</button>
                 </div>
                 <!-- RESULTS PAGE - User vs Comp -->
                 <div id="RESULTS PAGE" ng-show="app.showresults">
                     <div class="mdl-grid boxes">
                         <div class="mdl-shadow--2dp mdl-cell mdl-cell--5-col box" id="box1">
                             <h3>Human</h3>
-                            <div class='displayitem'  ng-switch on="app.userChoice" id="userImage">
-                                    <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
-                                    <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
-                                    <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                            <div class='displayitem' ng-switch on="app.userChoice" id="userImage">
+                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R' />
+                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P' />
+                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S' />
                             </div>
                         </div>
                         <div class="mdl-shadow--2dp mdl-cell mdl-cell--5-col box animated bounceInDown" id="box2">
                             <h3>Computer</h3>
                             <div class='displayitem' id='compImage' ng-switch on="app.compChoice">
-                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R'/>
-                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P'/>
-                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S'/>
+                                <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R' />
+                                <img ng-src={{app.paperIcon}} class='icons' ng-switch-when='P' />
+                                <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S' />
                             </div>
                         </div>
                     </div>
@@ -80,8 +81,10 @@
                                     <i class="material-icons">refresh</i>
                                 </button>
                             </div>
-                            <div class="mdl-cell mdl-cell--8-col mdl-cell--middle" >
-                                <span class="text-nowrap"><h3 class="animated tada" id="resultsboxText">{{app.gameResults}}</h3></span>
+                            <div class="mdl-cell mdl-cell--8-col mdl-cell--middle">
+                                <span class="text-nowrap">
+                                    <h3 class="animated tada" id="resultsboxText">{{app.gameResults}}</h3>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -133,16 +136,16 @@
                     <div id="mainContainer">
                         <a href={{app.personalSite}} target="_blank">
                             <div class="mdl-grid center-me mdl">
-                                <img class="mdl-cell mdl-cell--middle"src="../images/Logo-square-blue.png" id="logo"/>
+                                <img class="mdl-cell mdl-cell--middle" src="../images/Logo-square-blue.png" id="logo" />
                                 <h3 class="mdl-cell mdl-cell--8-col mdl-cell--middle" id="logotext">TerrellVest.com</h3>
                             </div>
                         </a>
 
                         <div class="bottomrow">
-                             <!-- margin left auto; -->
+                            <!-- margin left auto; -->
                             <div class="mdl-grid" id="socialLinks">
                                 <a href={{app.gitUrl}} target="_blank">
-                                    <img class="mdl-cell mdl-cell--4-col social-Icons" src="../images/Icons/Github.png" alt="icon"/>
+                                    <img class="mdl-cell mdl-cell--4-col social-Icons" src="../images/Icons/Github.png" alt="icon" />
                                 </a>
                                 <a href={{app.twitterUrl}} target="_blank">
                                     <img class="mdl-cell mdl-cell--4-col social-Icons" src="../images/Icons/Twitter.png" alt="twiitter icon" />
@@ -159,20 +162,21 @@
         </div>
     </div>
 
-<!--//////////// LOGO STAMP ////////////-->
+    <!--//////////// LOGO STAMP ////////////-->
     <div class="mdl-grid" id="bottom-logo-text">
         <h4 class="mdl-grid">TerrellVest.com</h4>
     </div>
-    <div class="mdl-grid"id="bottom-logo">
+    <div class="mdl-grid" id="bottom-logo">
         <div class="mdl-grid">
-            <img src="../images/Logo-square-blue.png" height="100px" width="100px" alt="logo"/>
+            <img src="../images/Logo-square-blue.png" height="100px" width="100px" alt="logo" />
         </div>
     </div>
 
-        <script type="text/javascript" src='../script/angular.js'></script>
-        <script type="text/javascript" src='../script/app.js'></script>
-        <script type="text/javascript" src="..//script/jquery-1.11.3.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
-    </body>
+    <script type="text/javascript" src='../script/angular.js'></script>
+    <script type="text/javascript" src='../script/app.js'></script>
+    <script type="text/javascript" src="..//script/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+</body>
+
 </html>

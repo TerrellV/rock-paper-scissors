@@ -2,17 +2,16 @@
     margin: 0px;
     padding: 0px;
 }
- /* resseting the page */
+
+/* resseting the page */
 
 body {
     background-color: #ECECEC;
 }
-
 #pageheader {
-    background-color:#2196F3;
+    background-color: #2196F3;
     color: white;
 }
-
 #mainText {
     margin-left: auto;
     margin-right: auto;
@@ -20,27 +19,24 @@ body {
     font-weight: 600;
 }
 
-
 /* APP CONTAINER*/
+
 #appContainer {
     text-align: center;
 }
-
 #app {
     background-color: #FCFCFC;
     margin: 40px auto;
     float: none;
     height: 600px;
 }
-
 #appHeader {
     color: white;
     background-color: #2196F3;
-    margin-left:-15px;
-    margin-right:-15px;
+    margin-left: -15px;
+    margin-right: -15px;
 }
-
-#appHeadertext h2{
+#appHeadertext h2 {
     font-size: 30px;
 }
 #appHeaderMore {
@@ -48,10 +44,10 @@ body {
 }
 
 /*START OPTIONS*/
+
 #options {
     margin: 80px auto;
 }
-
 .buttons {
     display: block;
     width: 230px;
@@ -60,33 +56,31 @@ body {
     padding: 20px;
     color: white;
     border: 0px solid rgba(176, 157, 238, 0);
-    margin: 40px 0 ;
+    margin: 40px 0;
     margin-left: auto;
     margin-right: auto;
 }
-
-#cRock{
+#cRock {
     background-color: #8D6E63;
 }
-
-#cPaper{
+#cPaper {
     background-color: #66BB6A;
 }
-
-#cScissors{
+#cScissors {
     background-color: #FFA726;
 }
+
 /*END OPTIONS*/
 
 
 /*RESULTS*/
+
 .icons {
     height: 170px;
     width: 170px;
     margin-bottom: 20px;
     margin-top: -10px;
 }
-
 .box {
     background-color: #FCFCFC;
     margin: 20px;
@@ -95,39 +89,29 @@ body {
     margin-right: auto;
     font-weight: bold;
 }
-
 #box2 h3, #box1 h3 {
     font-weight: 300;
 }
-
-
 .social-Icons {
     height: 60px;
     width: 60px;
 }
-
-#logo{
+#logo {
     height: 100px;
     width: 100px;
 }
-
 #logotext {
     font-size: 50px;
     font-weight: 200;
     text-align: left;
     color: black;
 }
-
-.center-me {
-
-}
-
+.center-me {}
 #socialLinks {
     width: 245px;
     margin-right: 0px;
     margin-top: -20px;
 }
-
 #mainContainer {
     width: 80%;
     margin: 80px auto;
@@ -136,16 +120,16 @@ body {
     -webkit-animation-delay: 1.3s;
     -moz-animation-delay: 1.3s;
 }
-
 #box2 {
     -webkit-animation-delay: .5s;
 }
-#bottom-logo-text h4{
-    font-family: "Pacifico",sans-serif;
+#bottom-logo-text h4 {
+    font-family: "Pacifico", sans-serif;
     font-weight: 100;
     color: #468FCC
 }
 #bottom-logo {
     margin-top: -30px;
 }
+
 /*seting animations*/
