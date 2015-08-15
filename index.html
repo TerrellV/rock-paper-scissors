@@ -64,7 +64,7 @@
                                 <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S' />
                             </div>
                         </div>
-                        <div class="mdl-shadow--2dp mdl-cell mdl-cell--5-col box animated bounceInDown" id="box2">
+                        <div class="mdl-shadow--2dp mdl-cell mdl-cell--5-col box" id="box2">
                             <h3>Computer</h3>
                             <div class='displayitem' id='compImage' ng-switch on="app.compChoice">
                                 <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R' />
@@ -83,7 +83,7 @@
                             </div>
                             <div class="mdl-cell mdl-cell--8-col mdl-cell--middle">
                                 <span class="text-nowrap">
-                                    <h3 class="animated tada" id="resultsboxText">{{app.gameResults}}</h3>
+                                    <h3 class="" id="resultsboxText">{{app.gameResults}}</h3>
                                 </span>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                 <!--  ## STATS ##  -->
                 <div ng-show="app.showstats" id="stats">
                     <!-- Wins & Losses  -->
-                    <div class='mdl-grid animated fadeIn' id="statsrow">
+                    <div class='mdl-grid ' id="statsrow">
                         <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='wins'>
                             <div class='mdl-card__actions'>
                                 <h1>{{app.stats.wins}}</h1>
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <!-- Ties & Total -->
-                    <div class='mdl-grid statsbox1 animated fadeIn stats-row'>
+                    <div class='mdl-grid statsbox1  stats-row'>
                         <div class='mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp' id='ties'>
                             <div class='mdl-card__actions'>
                                 <h1>{{app.stats.ties}}</h1>
