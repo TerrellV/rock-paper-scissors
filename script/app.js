@@ -14,15 +14,9 @@
         this.showbuttons = true;
         this.showresults = false;
         this.showstats = false;
-<<<<<<< HEAD
         this.rockIcon = "images/Rock-Icon.png";
         this.paperIcon = "images/Paper-Icon.png";
         this.scissorsIcon = "images/Scissors-Icon.png";
-=======
-        this.rockIcon = "../images/Rock-Icon.png";
-        this.paperIcon = "../images/Paper-Icon.png";
-        this.scissorsIcon = "../images/Scissors-Icon.png";
->>>>>>> Setting up gh-pages
         this.gitUrl = "https://github.com/MirPresT";
         this.twitterUrl = "https://twitter.com/TerrellVest7";
         this.facebookUrl = "https://www.facebook.com/terrell.vest7";
