@@ -54,8 +54,8 @@
                 </div>
                 <!-- RESULTS PAGE - User vs Comp -->
                 <div id="RESULTS PAGE" ng-show="app.showresults">
-                    <div class="mdl-grid boxes">
-                        <div class="mdl-shadow--2dp mdl-cell mdl-cell--5-col box" id="box1">
+                    <div class="boxes">
+                        <div class="mdl-shadow--2dp  box" id="box1">
                             <h3>Human</h3>
                             <div class='displayitem' ng-switch on="app.userChoice" id="userImage">
                                 <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R' />
@@ -63,7 +63,7 @@
                                 <img ng-src={{app.scissorsIcon}} class='icons' ng-switch-when='S' />
                             </div>
                         </div>
-                        <div class="mdl-shadow--2dp mdl-cell mdl-cell--5-col box" id="box2">
+                        <div class="mdl-shadow--2dp  box" id="box2">
                             <h3>Computer</h3>
                             <div class='displayitem' id='compImage' ng-switch on="app.compChoice">
                                 <img ng-src={{app.rockIcon}} class='icons' ng-switch-when='R' />

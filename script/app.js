@@ -21,7 +21,8 @@
         this.twitterUrl = "https://twitter.com/TerrellVest7";
         this.facebookUrl = "https://www.facebook.com/terrell.vest7";
         this.personalSite = "http://terrellvest.com/";
-///////////////// Game Logic /////////////////////
+
+        ///////////////// Game Logic /////////////////////
 
         // set random value for computer
         function compChoice() {
