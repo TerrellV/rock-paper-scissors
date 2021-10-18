@@ -1,7 +1,8 @@
-#Rock Paper Scissors project
+# Rock Paper Scissors project
+One of my first over code projects
 
 
-###Check it out [Here.](http://mirprest.github.io/rock-paper-scissors/). 
+### Check it out [Here.](https://terrellv.github.io/rock-paper-scissors/). 
 
 In building this project I used AngularJS Bootstrap and and jquery.
 
