@@ -1,5 +1,5 @@
 # Rock Paper Scissors project
-One of my first over code projects
+One of my first ever code projects
 
 
 ### Check it out [Here.](https://terrellv.github.io/rock-paper-scissors/). 
